@@ -30,46 +30,27 @@
 
     <section class="panel-body narrow">
       <h1>Create Account</h1>
+      <form id="registerForm" class="form">
+  <div class="grid-2 gap">
+    <label>Full Name
+      <input id="regName" type="text" required />
+    </label>
+    <label>Email
+      <input id="regEmail" type="email" autocomplete="email" required />
+    </label>
+  </div>
+  <label>Password
+    <input id="regPassword" type="password" minlength="6" required />
+  </label>
 
-      <form class="form" action="#" onsubmit="return false;">
-        <div class="grid-2 gap">
-          <label>First Name
-            <input type="text" required />
-          </label>
-          <label>Last Name
-            <input type="text" required />
-          </label>
-        </div>
-
-        <label>Email
-          <input type="email" required />
-        </label>
-
-        <label>Password
-          <input type="password" required minlength="6" />
-        </label>
-
-        <button class="btn btn-primary block">Create Account</button>
-
-        <p class="tiny muted">Already have an account?
-          <a href="login.html">Log in</a>
-        </p>
-
-        <div class="hr-or"><span>or</span></div>
-
-        <div class="auth-row">
-          <button class="btn btn-outline icon-left">
-            <img src="images/facebook.png" alt="">
-            Sign up with Facebook
-          </button>
-          <button class="btn btn-outline icon-left">
-            <img src="images/google.png" alt="">
-            Sign up with Google
-          </button>
-        </div>
-      </form>
+  <p id="regError" class="tiny" style="display:none;color:#a52834;"></p>
+  <button class="btn btn-primary block" type="submit">Create Account</button>
+</form>
     </section>
   </main>
   <script src="js/script.js"></script>
+  <!-- Firebase SDKs (ESM, from CDN) -->
+<!-- Your auth logic -->
+<script type="module" src="js/auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Account • Brew Haven</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="theme-sand two-panel">
+  <aside class="illustration-panel">
+    <div class="illust-card">
+      <img class="side-illustration" src="images/people.png" alt="Coffee illustration">
+    </div>
+  </aside>
+
+  <main class="panel">
+    <header class="panel-header">
+      <a class="brand" href="index.html">BREW HAVEN</a>
+      <nav class="panel-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <!-- 🔽 Guarded content: only shown when logged in -->
+    <section class="panel-body" id="authGuard" style="display:none">
+      <h1>Welcome back</h1>
+      <p><strong id="userName"></strong></p>
+      <p id="userEmail" class="muted"></p>
+
+      <button id="logoutBtn" class="btn btn-outline">Log out</button>
+    </section>
+  </main>
+
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brew Haven • Coffee & Bakery</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="theme-sand">
+  <!-- Header / Hero -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">BREW HAVEN</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="#coffee">Coffee</a>
+        <a href="#bakery">Bakery</a>
+        <a href="#shop">Shop</a>
+        <a href="about.html">About</a>
+        <a href="login.html" class="btn btn-text">Login</a>
+        <button class="icon-btn search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
+        </button>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <section class="hero">
+      <img class="hero-bg" src="images/hero.jpg" alt="Coffee beans and latte art background">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Welcome!</p>
+          <h1>we serve the richest coffee in the city</h1>
+          <p class="muted">
+            At our café, every cup is crafted with premium coffee beans and brewed to perfection by our passionate baristas. We focus on quality, flavor, and a welcoming atmosphere so you can enjoy the best coffee experience in the city.
+          </p>
+          <a href="#coffee" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+      <div class="hero-bottom-sep"></div>
+    </section>
+
+    <section class="container categories">
+      <article class="category">
+        <img src="images/kk.png" alt="" />
+        <h4>Hot Coffee</h4>
+      </article>
+      <article class="category">
+        <img src="images/jj.png" alt="" />
+        <h4>Cold Coffee</h4>
+      </article>
+      <article class="category">
+        <img src="images/oo.png" alt="" />
+        <h4>Cup Coffee</h4>
+      </article>
+      <article class="category">
+        <img src="images/dd.png" alt="" />
+        <h4>Dessert</h4>
+      </article>
+    </section>
+  </header>
+
+  <!-- Coffee Specials Slider -->
+  <main>
+    <section id="coffee" class="container section">
+      <h2 class="section-title">OUR SPECIAL COFFEE</h2>
+
+      <div class="carousel" data-carousel="coffee">
+        <button class="carousel-nav prev" aria-label="Previous">
+          <img src="images/arrow.png" alt="">
+        </button>
+
+        <div class="carousel-track">
+          <!-- Card 1 -->
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/lungo.jpg" alt="Lungo Coffee" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Lungo Coffee</h3>
+              <p class="card-text">
+                A strong and extended espresso shot made with a longer extraction to deliver a bold aroma.
+              </p>
+              <div class="price-row">
+                <span class="price">10,000</span>
+                <small class="usd">≈US$2.44</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/Dalgona.jpg" alt="Dalgona Coffee" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Dalgona Coffee</h3>
+              <p class="card-text">
+                Whipped and silky, served over cold milk with a sweet finish.
+              </p>
+              <div class="price-row">
+                <span class="price">15,000</span>
+                <small class="usd">≈US$3.66</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/iced.jpg" alt="Iced Coffee" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Iced Coffee</h3>
+              <p class="card-text">
+                Cold-brew blend over ice with a splash of milk.
+              </p>
+              <div class="price-row">
+                <span class="price">11,000</span>
+                <small class="usd">≈US$2.68</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/Filter.jpg" alt="Filter Coffee" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Filter Coffee</h3>
+              <p class="card-text">
+                Dripper-brewed aromas to highlight the roast profile.
+              </p>
+              <div class="price-row">
+                <span class="price">10,000</span>
+                <small class="usd">≈US$2.44</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+        </div>
+
+        <button class="carousel-nav next" aria-label="Next">
+          <img src="images/arrow2.png" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!-- Desserts Slider -->
+    <section id="bakery" class="container section">
+      <h2 class="section-title">OUR SPECIAL DESSERT</h2>
+
+      <div class="carousel" data-carousel="dessert">
+        <button class="carousel-nav prev" aria-label="Previous">
+          <img src="images/arrow.png" alt="">
+        </button>
+
+        <div class="carousel-track">
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/Kulfee.jpg" alt="Kulfee Cake" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Kulfee Cake</h3>
+              <p class="card-text">Cardamom & saffron notes with nutty textures.</p>
+              <div class="price-row">
+                <span class="price">18,000</span>
+                <small class="usd">≈US$4.39</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/Cupcake.jpg" alt="Cupcake" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cupcake</h3>
+              <p class="card-text">Dutch-process cocoa with creamy buttercream.</p>
+              <div class="price-row">
+                <span class="price">12,000</span>
+                <small class="usd">≈US$2.93</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/Chocolate Cake.jpg" alt="Chocolate Cake" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Chocolate Cake</h3>
+              <p class="card-text">Dark ganache and moist layers, warm chocolate glaze.</p>
+              <div class="price-row">
+                <span class="price">20,000</span>
+                <small class="usd">≈US$4.88</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+
+          <article class="card product">
+            <div class="card-media">
+              <img src="images/Tiramisu.jpg" alt="Tiramisu" />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tiramisu</h3>
+              <p class="card-text">Espresso-soaked sponge with mascarpone cream.</p>
+              <div class="price-row">
+                <span class="price">18,000</span>
+                <small class="usd">≈US$4.39</small>
+              </div>
+              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+            </div>
+          </article>
+        </div>
+
+        <button class="carousel-nav next" aria-label="Next">
+          <img src="images/arrow2.png" alt="">
+        </button>
+      </div>
+    </section>
+
+    <!-- Beans banner -->
+    <section id="shop" class="beans-banner">
+      <img class="beans-left" src="images/Bean Left.png" alt="Left side of the beans banner">
+      <img class="beans-right" src="images/Bean Right.png" alt="Right side of the beans banner">
+      <div class="container">
+        <div class="beans-card">
+          <h3>Check out our best coffee beans</h3>
+          <a class="btn btn-secondary" href="#coffee">Explore our products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+<section class="container section testimonials">
+  <p class="kicker">Come and join</p>
+  <h2 class="section-title">OUR HAPPY CUSTOMERS</h2>
+
+  <div class="cards-3">
+    <!-- Review 1 -->
+    <article class="card review">
+      <div class="review-head">
+        <img class="avatar circle" src="images/front.jpg" alt="Customer photo for Sophia" loading="lazy" width="42" height="42">
+        <div>
+          <h4 class="name">Sophia C.</h4>
+          <p class="role">Graphic Designer</p>
+        </div>
+        <div class="stars" aria-label="Rating 4 out of 5">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          
+        </div>
+      </div>
+      <p class="card-text">
+        The aesthetic is beautiful; I love spending time here reading. The lighting is perfect when getting some creative work done.
+      </p>
+    </article>
+
+    <!-- Review 2 -->
+    <article class="card review">
+      <div class="review-head">
+        <img class="avatar circle" src="images/mid.jpg" alt="Customer photo for Lily" loading="lazy" width="42" height="42">
+        <div>
+          <h4 class="name">Lily B.</h4>
+          <p class="role">Entrepreneur</p>
+        </div>
+        <div class="stars" aria-label="Rating 5 out of 5">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png " alt="" aria-hidden="true">
+        </div>
+      </div>
+      <p class="card-text">
+        The coffee here is absolutely amazing. This is the perfect place to meet friends or work in peace.
+      </p>
+    </article>
+
+    <!-- Review 3 -->
+    <article class="card review">
+      <div class="review-head">
+        <img class="avatar circle" src="images/end.jpg" alt="Customer photo for Marcus" loading="lazy" width="42" height="42">
+        <div>
+          <h4 class="name">Marcus T.</h4>
+          <p class="role">Content Creator</p>
+        </div>
+        <div class="stars" aria-label="Rating 3 out of 5">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          <img src="images/star.png" alt="" aria-hidden="true">
+          
+        </div>
+      </div>
+      <p class="card-text">
+        A total hidden gem. The staff is kind, the menu is creative, and the ambiance is relaxing.
+      </p>
+    </article>
+  </div>
+</section>
+
+    <!-- Newsletter -->
+    <!-- Newsletter -->
+<section class="newsletter">
+  <!-- ⬇️ Decorative beans (left & right) -->
+  <img class="beans-left" src="images/bean chveng.png" alt="Left side of the newsletter banner">
+  <img class="beans-right" src="images/bean sdam.png" alt="Right side of the newsletter banner">
+
+  <div class="container newsletter-inner">
+    <h3>Join in and get 15% Off!</h3>
+    <p>Subscribe to our newsletter and get 15% off discount code</p>
+
+    
+      <div class="input-with-icon">
+        <input class="email-input" type="email" placeholder="Email address" required>
+      </div>
+      <button class="btn btn-secondary">Subscribe</button>
+    </form>
+  </div>
+</section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>COFFEE</h4>
+      </div>
+      <div>
+        <h4>PRIVACY</h4>
+        <ul>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>SERVICES</h4>
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Order ahead</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>INFORMATION</h4>
+        <ul>
+          <li><a href="#">Plan & pricing</a></li>
+          <li><a href="#">Sell your products</a></li>
+          <li><a href="#">Jobs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>SOCIAL MEDIA</h4>
+        <div class="social">
+          <a href="#"><img src="images/ig.PNG" alt="Facebook"></a>
+          <a href="#"><img src="images/fb.PNG" alt="Instagram"></a>
+          <a href="#"><img src="images/x.PNG" alt="X"></a>
+          <a href="#"><img src="images/linkedin.PNG" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+    <p class="tiny center muted">© <span id="year"></span> Brew Haven. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+``

@@ -1,0 +1,391 @@
+/* --- Variables & Base --- */
+:root{
+  --bg: #f1e5e6;          /* pinky page margin */
+  --panel: #e0c4b2;       /* beige panel background */
+  --panel-strong:#d7b7a1;
+  --ink: #2b2a2a;
+  --muted: #6d655e;
+  --brand: #1f1b18;
+  --accent: #2f281f;
+  --white:#fff;
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+  --radius: 14px;
+  --radius-lg: 24px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container{width:min(1200px,94%); margin:auto}
+.center{text-align:center}
+.tiny{font-size:.85rem}
+.muted{color:var(--muted)}
+.kicker{font-family: Nunito, sans-serif; text-align:center; margin:.2rem 0; color:var(--muted)}
+.eyebrow{letter-spacing:.08em; font-weight:700; color:#fff; opacity:.9}
+.section{padding:70px 0}
+.section-title{text-align:center; margin:0 0 24px 0}
+
+/* --- Header & Nav --- */
+.site-header{
+  background: linear-gradient(180deg, #000 20%, #1b1b1b 60%, #d2c4b6 60%, #d2c4b6 100%);
+  color:#fff;
+}
+
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 0;
+}
+.brand{color:#fff; text-decoration:none; font-weight:700; letter-spacing:.06em}
+.nav-links a{color:#fff; opacity:.9; margin:0 14px; text-decoration:none}
+.nav-links a.active{opacity:1; font-weight:600}
+.nav-links{display:flex; align-items:center; gap:6px}
+.btn-text{padding:6px 10px; border-radius:10px}
+.icon-btn{background:transparent; border:0; color:#fff; cursor:pointer}
+
+.hamburger{display:none; background:transparent; border:0; width:42px; height:42px; position:relative}
+.hamburger span{display:block; height:2px; background:#fff; margin:8px 0}
+
+/* --- Hero --- */
+.hero{position:relative; padding:40px 0 0 0}
+.hero-bg{
+  position:absolute; inset:0; width:100%; height:460px; object-fit:cover; filter:brightness(.75);
+}
+.hero-content{position:relative; height:460px; display:flex; align-items:center}
+.hero-copy{max-width:520px}
+.hero-copy h1{font-size:2.4rem; line-height:1.2; margin:.2rem 0 1rem}
+.hero-bottom-sep{height:90px; background:#d2c4b6}
+
+/* --- Categories --- */
+.categories{display:grid; grid-template-columns: repeat(4,1fr); gap:14px; margin-top:-25px; padding-bottom:22px}
+.category{background:#e6d7c9; border-radius:10px; padding:22px; text-align:center; box-shadow: var(--shadow)}
+.category img{width:120px; height:120px; margin-bottom:10px}
+
+/* --- Cards --- */
+.card{background:#fff; border-radius:16px; overflow:hidden; box-shadow: var(--shadow)}
+.card-media img{width:100%; height:220px; object-fit:cover; display:block}
+.card-body{padding:16px}
+.card-title{margin:0 0 6px 0}
+.card-text{font-size:.95rem; color:var(--muted); margin:0 0 14px 0}
+.price-row{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
+.price{font-weight:700}
+.usd{color:var(--muted)}
+
+/* --- Buttons --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:12px 18px; border-radius:999px; border:0; cursor:pointer;
+  font-weight:600; text-decoration:none; white-space:nowrap;
+}
+.btn-primary{background:#1f1b18; color:#fff}
+.btn-secondary{background:#b99c80; color:#1f1b18}
+.btn-outline{background:#fff; border:2px solid #1f1b18; color:#1f1b18}
+.block{display:block; width:100%}
+.icon-left img{width:18px; height:18px}
+
+/* --- Carousel --- */
+.carousel{position:relative}
+.carousel .carousel-track{
+  display:grid; grid-auto-flow:column; grid-auto-columns: calc((100% - 3*24px)/4);
+  gap:24px; overflow:hidden; scroll-behavior:smooth;
+}
+.carousel-nav{
+  position:absolute; top:45%; transform:translateY(-50%);
+  width:38px; height:38px; border-radius:999px; border:0;
+  background:#efe7df; box-shadow: var(--shadow); cursor:pointer;
+  display:grid; place-items:center;
+}
+.carousel-nav img{width:14px}
+.carousel .prev{left:-16px}
+.carousel .next{right:-16px}
+
+/* --- Beans banner --- */
+.beans-banner{position:relative; background:#fff; padding:40px 0; margin:30px 0}
+.beans-left, .beans-right{position:absolute; top:0; height:100%; object-fit:contain; pointer-events:none}
+.beans-left{left:0}
+.beans-right{right:0}
+.beans-card{
+  background:#efe7df; padding:26px; border-radius:16px; box-shadow: var(--shadow);
+  max-width:480px;
+}
+
+/* --- Testimonials --- */
+.cards-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+.review .review-head{display:flex; align-items:center; gap:12px; padding:14px 16px 0}
+.avatar{width:42px; height:42px; background:#ddd}
+.circle{border-radius:50%}
+.stars img{width:16px; height:16px}
+
+/* --- Newsletter --- */
+.newsletter{background:#e8d6c7; padding:40px 0}
+.newsletter-inner{display:grid; gap:10px; text-align:center}
+.subscribe{display:flex; gap:10px; justify-content:center}
+.subscribe input{padding:12px 14px; border-radius:999px; border:1px solid #c8b7a6; width:min(360px, 70%)}
+
+/* --- Footer --- */
+.site-footer{background:#1f1b18; color:#eee; padding:32px 0}
+.footer-grid{display:grid; grid-template-columns:2fr repeat(3,1fr) 1.5fr; gap:20px}
+.footer-grid h4{margin:0 0 10px 0}
+.footer-grid ul{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+.footer-grid a{color:#ddd; text-decoration:none}
+.social a img{width:18px; margin-right:8px}
+
+/* --- Two-panel layout for inner pages --- */
+.two-panel{display:grid; grid-template-columns: 36% 64%; min-height:100vh}
+.illustration-panel{background:#efe7df url('../assets/beans-left.png') no-repeat bottom left/contain}
+.panel{
+  background:var(--panel);
+  border-top-left-radius:24px; border-bottom-left-radius:24px;
+  padding-bottom:40px; position:relative;
+}
+.panel-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 24px 0;
+}
+.panel-nav a{color:#2b2a2a; text-decoration:none; margin-left:18px; opacity:.9}
+.panel-nav a.active{font-weight:600}
+.panel-body{padding:26px 24px 40px}
+.panel-body.narrow{max-width:680px; margin:auto}
+.fieldset{border:1px solid #c9b4a3; border-radius:12px; padding:14px 16px}
+
+/* --- Forms --- */
+.form{display:grid; gap:14px}
+.form label{display:grid; gap:6px; font-size:.95rem}
+.form input, .form select{
+  padding:12px 14px; border:1px solid #c8b7a6; border-radius:10px; background:#f4ebe4;
+}
+.grid-2{display:grid; grid-template-columns:1fr 1fr}
+.gap{gap:14px}
+.form-row.between{display:flex; justify-content:space-between; align-items:center}
+.hr-or{display:grid; place-items:center; margin:14px 0}
+.hr-or span{background:transparent; font-size:.9rem; color:var(--muted)}
+.auth-row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+
+/* --- Cart line --- */
+.cart-line{
+  background:#fff; border-radius:12px; padding:12px; display:grid;
+  grid-template-columns:auto 1fr auto; gap:12px; align-items:center; margin-bottom:14px;
+}
+.cart-media img{width:80px; height:64px; object-fit:cover; border-radius:8px}
+.qty{display:flex; align-items:center; gap:6px}
+.btn-qty{width:34px; height:34px; border-radius:8px; border:1px solid #c8b7a6; background:#fff; cursor:pointer}
+
+/* --- Utilities --- */
+.btn-secondary:hover, .btn-primary:hover, .btn-outline:hover{filter:brightness(.95)}
+.block{width:100%}
+
+/* --- Responsive --- */
+@media (max-width: 1100px){
+  .carousel .carousel-track{grid-auto-columns: calc((100% - 2*20px)/3)}
+  .cards-3{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width: 800px){
+  .two-panel{grid-template-columns: 1fr}
+  .panel{border-radius:0}
+  .illustration-panel{display:none}
+  .carousel .carousel-track{grid-auto-columns: calc((100% - 20px)/2)}
+  .categories{grid-template-columns: repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 560px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+  .carousel .carousel-track{grid-auto-columns: 100%}
+  .cards-3{grid-template-columns:1fr}
+  .auth-row{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+}
+/* CENTER "Check out our best coffee beans" section */
+.beans-banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.beans-card {
+  margin: 0 auto;
+}
+/* Review avatar images */
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;   /* crops to fill the circle nicely */
+  display: block;
+}
+/* === Newsletter band + decorative beans === */
+.newsletter{
+  position: relative;           /* allows absolute children */
+  background: #e8d6c7;          /* your beige band */
+  padding: 40px 0;
+  overflow: hidden;             /* hide bean overflow at edges */
+}
+
+.newsletter-inner{
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  justify-items: center;
+}
+
+/* Center the form row */
+.newsletter .subscribe,
+.newsletter-inner form,
+.newsletter form{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Bean images on the sides */
+.newsletter .beans-left,
+.newsletter .beans-right{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;    /* don't block clicks on the form */
+  z-index: 0;              /* sit behind the text */
+  opacity: 1;              /* adjust if too strong: e.g., 0.9 */
+}
+
+/* Left bean cluster */
+.newsletter .beans-left{
+  left: 0;
+  transform: translateX(-1%);   /* nudges slightly off the edge */
+}
+
+/* Right bean cluster */
+.newsletter .beans-right{
+  right: 0;
+  transform: translateX(1%);
+}
+
+/* Make sure the content sits above the images */
+.newsletter .newsletter-inner{
+  position: relative;
+  z-index: 1;
+}
+
+/* Envelope icon inside the email input */
+.input-with-icon{ position: relative; display: inline-block; }
+
+.email-input,
+.newsletter input[type="email"]{
+  padding: 12px 14px 12px 42px;  /* space for icon */
+  border-radius: 999px;
+  border: 1px solid #c8b7a6;
+  background: #fff;
+  min-width: min(360px, 80vw);
+  outline: none;
+}
+
+/* Use your envelope icon (adjust path if needed) */
+.email-input{
+  background-image: url('images/evelope.png');
+  background-repeat: no-repeat;
+  background-position: 14px center;
+  background-size: 18px;
+}
+
+/* Small focus feedback */
+.email-input:focus{
+  border-color: #b99c80;
+  box-shadow: 0 0 0 3px rgba(185,156,128,0.25);
+}
+
+/* --- Responsive tweaks for the beans --- */
+@media (max-width: 900px){
+  .newsletter .beans-left,
+  .newsletter .beans-right{
+    opacity: 0.75;            /* soften on smaller screens */
+  }
+  .newsletter .beans-left{ transform: translateX(-15%); }
+  .newsletter .beans-right{ transform: translateX(15%); }
+}
+
+@media (max-width: 600px){
+  .newsletter{ padding: 32px 0; }
+  .newsletter .beans-left,
+  .newsletter .beans-right{
+    opacity: 0.5;
+  }
+}
+/* === Left illustration panel for inner pages === */
+.illustration-panel{
+  /* Make the left column a neutral canvas and center its content */
+  background: #efe7df;                 /* keep or change to your beige */
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.side-illustration{
+  width: min(92%, 540px);               /* responsive width cap */
+  height: auto;
+  object-fit: contain;                  /* preserve aspect ratio */
+  border-radius: 14px;                  /* optional: soft corners */
+  box-shadow: var(--shadow);            /* optional: subtle depth */
+}
+
+/* If your previous CSS set a background image on .illustration-panel,
+   the rules above will override it visually. Keep both if you like the
+   textured background plus the centered photo on top. */
+
+@media (max-width: 800px){
+  /* On phones we hide the left panel per your two-panel layout rules.
+     Remove display:none below if you want to show the image on mobile. */
+  /* .illustration-panel{ display:none; } */
+}
+/* Left column container */
+.illustration-panel{
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  padding: 28px 24px;
+}
+
+/* Card that holds the image */
+.illust-card{
+  width: min(92%, 560px);
+  background: #f1e5e6;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+}
+
+/* Image fits inside the card */
+.illust-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Right content panel keeps left rounded corners only */
+.panel{
+  background: var(--panel);
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+/* Layout height */
+.two-panel{ min-height: 100vh; }
+
+/* Optional responsive tweaks */
+@media (max-width: 800px){
+  .two-panel{ grid-template-columns: 1fr; }
+  .illustration-panel{ padding: 18px 14px; }
+  .illust-card{ width: min(96%, 520px); border-radius: 14px; }
+}

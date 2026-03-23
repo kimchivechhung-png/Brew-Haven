@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout • Brew Haven</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="theme-sand two-panel">
+  <aside class="illustration-panel">
+    <div class="illust-card">
+      <img src="images/people.png" alt="Checkout illustration" class="side-illustration">
+    </div>
+  </aside>
+
+  <main class="panel">
+    <header class="panel-header">
+      <a class="brand" href="index.html">BREW HAVEN</a>
+      <nav class="panel-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#coffee">Coffee</a>
+        <a href="index.html#bakery">Bakery</a>
+        <a href="index.html#shop">Shop</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <section class="panel-body narrow">
+      <h1>Your basket</h1>
+
+      <div class="cart-line">
+        <div class="cart-media">
+          <img src="images/Chocolate Cake.jpg" alt="Chocolate Cake">
+        </div>
+        <div class="cart-info">
+          <strong>Chocolate Cake</strong>
+          <div class="muted tiny">20,000 &nbsp; • &nbsp; ≈US$4.88</div>
+        </div>
+        <div class="qty">
+          <button class="btn-qty" data-step="-1">−</button>
+          <input type="number" value="1" min="1" />
+          <button class="btn-qty" data-step="1">+</button>
+        </div>
+      </div>
+
+      <form class="form" action="#" onsubmit="return false;">
+        <div class="grid-2 gap">
+          <label>Your name
+            <input type="text" required />
+          </label>
+          <label>Phone number
+            <input type="tel" required />
+          </label>
+        </div>
+
+        <label>Address
+          <input type="text" required />
+        </label>
+
+        <label>Note
+          <input type="text" />
+        </label>
+
+        <fieldset class="fieldset">
+          <legend>Payment Details</legend>
+          <label>Order
+            <select>
+              <option>Delivery</option>
+              <option>Pickup</option>
+            </select>
+          </label>
+          <label>Total
+            <input id="orderTotal" type="text" value="20,000" readonly />
+          </label>
+        </fieldset>
+
+        <button class="btn btn-primary block">Pay Now</button>
+      </form>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -26,60 +26,105 @@
         <a href="login.html">Login</a>
       </nav>
     </header>
+<section class="panel-body narrow">
+  <h1>Your basket</h1>
 
-    <section class="panel-body narrow">
-      <h1>Your basket</h1>
+  <!-- ✅ Dynamic cart items -->
+  <div id="cartItems"></div>
 
-      <div class="cart-line">
-        <div class="cart-media">
-          <img src="images/Chocolate Cake.jpg" alt="Chocolate Cake">
-        </div>
-        <div class="cart-info">
-          <strong>Chocolate Cake</strong>
-          <div class="muted tiny">20,000 &nbsp; • &nbsp; ≈US$4.88</div>
-        </div>
-        <div class="qty">
-          <button class="btn-qty" data-step="-1">−</button>
-          <input type="number" value="1" min="1" />
-          <button class="btn-qty" data-step="1">+</button>
-        </div>
-      </div>
+  <form class="form" onsubmit="return false;">
+    <div class="grid-2 gap">
+      <label>Your name
+        <input type="text" required />
+      </label>
+      <label>Phone number
+        <input type="tel" required />
+      </label>
+    </div>
 
-      <form class="form" action="#" onsubmit="return false;">
-        <div class="grid-2 gap">
-          <label>Your name
-            <input type="text" required />
-          </label>
-          <label>Phone number
-            <input type="tel" required />
-          </label>
-        </div>
+    <label>Address
+      <input type="text" required />
+    </label>
 
-        <label>Address
-          <input type="text" required />
-        </label>
+    <label>Note
+      <input type="text" />
+    </label>
 
-        <label>Note
-          <input type="text" />
-        </label>
+    <fieldset class="fieldset">
+      <legend>Payment Details</legend>
+      <label>Order
+        <select>
+          <option>Delivery</option>
+          <option>Pickup</option>
+        </select>
+      </label>
+      <label>Total
+        <input id="orderTotal" type="text" value="0.00" readonly />
+      </label>
+    </fieldset>
 
-        <fieldset class="fieldset">
-          <legend>Payment Details</legend>
-          <label>Order
-            <select>
-              <option>Delivery</option>
-              <option>Pickup</option>
-            </select>
-          </label>
-          <label>Total
-            <input id="orderTotal" type="text" value="20,000" readonly />
-          </label>
-        </fieldset>
-
-        <button class="btn btn-primary block">Pay Now</button>
-      </form>
-    </section>
+    <button
+      class="btn btn-primary block"
+      type="button"
+      onclick="payNow()"
+    >
+    <p class="muted tiny">
+       This is a demo payment. No real money will be charged.
+      </p>
+      Pay Now
+    </button>
+  </form>
+</section>
   </main>
   <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+  function renderCart() {
+    const cart = getCart();
+    const container = document.getElementById("cartItems");
+    const totalInput = document.getElementById("orderTotal");
+
+    if (!cart || cart.length === 0) {
+      container.innerHTML = "<p>Your cart is empty.</p>";
+      totalInput.value = "0.00";
+      return;
+    }
+
+    let total = 0;
+
+    container.innerHTML = cart.map(item => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+
+      return `
+        <div class="cart-line">
+          <strong>${item.name}</strong>
+          <div class="qty">
+            <button onclick="changeQty('${item.name}', -1)">−</button>
+            ${item.qty}
+            <button onclick="changeQty('${item.name}', 1)">+</button>
+          </div>
+          <span>$${itemTotal.toFixed(2)}</span>
+        </div>
+      `;
+    }).join("");
+
+    totalInput.value = total.toFixed(2);
+  }
+
+  function payNow() {
+    const cart = getCart();
+    if (!cart.length) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    localStorage.removeItem("cart");
+    window.location.href = "success.html";
+  }
+
+  // ✅ THIS IS CRITICAL
+  renderCart();
+</script>
 </body>
 </html>

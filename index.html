@@ -21,6 +21,9 @@
         <a href="about.html">About</a>
         <a href="login.html" class="btn btn-text">Login</a>
         <a href="register.html">Register</a>
+        <a href="checkout.html" class="btn btn-secondary">
+           🛒 Cart (<span id="cartCount">0</span>)
+        </a>
         <button class="icon-btn search-btn" aria-label="Search">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
         </button>
@@ -64,7 +67,9 @@
       </article>
     </section>
   </header>
-
+<a href="checkout.html" class="btn btn-secondary">
+  🛒 View Cart & Checkout
+</a>
   <!-- Coffee Specials Slider -->
   <main>
     <section id="coffee" class="container section">
@@ -90,7 +95,12 @@
                 <span class="price">10,000</span>
                 <small class="usd">≈US$2.44</small>
               </div>
-              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+              <button
+                class="btn btn-primary"
+                onclick="addToCart('Lungo Coffee', 2.44)"
+              >
+                 Add to Cart
+              </button>
             </div>
           </article>
 
@@ -108,7 +118,12 @@
                 <span class="price">15,000</span>
                 <small class="usd">≈US$3.66</small>
               </div>
-              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+              <button
+                class="btn btn-primary"
+                onclick="addToCart('Dalgona Coffee', 3.66)"
+              >
+                 Add to Cart
+              </button>
             </div>
           </article>
 
@@ -126,7 +141,12 @@
                 <span class="price">11,000</span>
                 <small class="usd">≈US$2.68</small>
               </div>
-              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+              <button
+                class="btn btn-primary"
+                onclick="addToCart('Iced Coffee', 2.68)"
+              >
+                 Add to Cart
+              </button>
             </div>
           </article>
 
@@ -144,7 +164,12 @@
                 <span class="price">10,000</span>
                 <small class="usd">≈US$2.44</small>
               </div>
-              <a href="checkout.html" class="btn btn-outline">Order Now</a>
+              <button
+                class="btn btn-primary"
+                onclick="addToCart('Filter Coffee', 2.44)"
+              >
+                 Add to Cart
+              </button>
             </div>
           </article>
         </div>
@@ -379,6 +404,11 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+  updateCartCount();
+</script>
+
 </body>
 </html>
 ``

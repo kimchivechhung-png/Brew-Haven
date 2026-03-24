@@ -4,7 +4,9 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import {
   getAuth, onAuthStateChanged, createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail   
+  signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail, 
+GoogleAuthProvider, signInWithPopup    
+ 
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 // (Optional) Analytics — you can skip these two lines entirely if you don’t need GA
 // import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js';
@@ -61,6 +63,21 @@ if (loginForm) {
       window.location.href = 'account.html';
     } catch (err) {
       if (error) { error.textContent = err.message; show(error, true); }
+    }
+  });
+}
+// --- GOOGLE SIGN IN ---
+const googleBtn = document.getElementById("googleLoginBtn");
+
+if (googleBtn) {
+  const provider = new GoogleAuthProvider();
+
+  googleBtn.addEventListener("click", async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      window.location.href = "account.html";
+    } catch (err) {
+      alert(err.message);
     }
   });
 }
